@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Typed animation
     new Typed('#typed-text', {
-        strings: ['MCA Student (Security Essentials)', 'Full Stack Developer', 'Cloud & AI Enthusiast', 'Hackathon Semi-Finalist'],
+        strings: ['MCA Student (Security Essentials)', 'Full Stack Developer', 'Cloud & Devops Enthusiast', 'Hackathon Semi-Finalist'],
         typeSpeed: 65,
         backSpeed: 35,
         loop: true
