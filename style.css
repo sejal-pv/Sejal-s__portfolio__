@@ -226,56 +226,6 @@ section h2 {
     color: var(--text-secondary);
 }
 
-.testimonial-slider {
-    display: flex;
-    gap: 30px;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    padding-bottom: 20px;
-    scrollbar-width: thin;
-}
-.testimonial-card {
-    flex: 0 0 320px;
-    background: var(--card-bg);
-    border-radius: 28px;
-    padding: 28px;
-    scroll-snap-align: start;
-    border: 1px solid var(--border-subtle);
-    transition: 0.2s;
-}
-.testimonial-card:hover {
-    border-color: var(--accent);
-}
-.testimonial-card i.fa-quote-left {
-    color: var(--accent);
-    font-size: 2rem;
-    opacity: 0.5;
-    margin-bottom: 15px;
-    display: inline-block;
-}
-.testimonial-card p {
-    font-style: italic;
-    margin: 15px 0;
-}
-.testimonial-author {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-top: 20px;
-}
-.testimonial-author img {
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    object-fit: cover;
-    background: var(--accent);
-}
-.rating {
-    color: #fbbf24;
-    letter-spacing: 2px;
-    margin-top: 8px;
-}
-
 .experience-item {
     background: var(--card-bg);
     padding: 1.8rem;
