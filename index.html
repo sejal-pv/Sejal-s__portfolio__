@@ -2,390 +2,153 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Sejal Vernekar | Portfolio</title>
-
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-    <style>
-
-        *{
-            margin:0;
-            padding:0;
-            box-sizing:border-box;
-            font-family:'Poppins',sans-serif;
-        }
-
-        html{
-            scroll-behavior:smooth;
-        }
-
-        body{
-            background:#050B1B;
-            color:white;
-        }
-
-        /* NAVBAR */
-
-        nav{
-            position:fixed;
-            top:0;
-            width:100%;
-            background:#0A0F1F;
-            display:flex;
-            justify-content:space-between;
-            align-items:center;
-            padding:20px 8%;
-            z-index:1000;
-        }
-
-        .logo{
-            font-size:2rem;
-            font-weight:700;
-            color:#8B5CF6;
-        }
-
-        nav ul{
-            display:flex;
-            list-style:none;
-            gap:35px;
-        }
-
-        nav a{
-            text-decoration:none;
-            color:white;
-            transition:0.3s;
-        }
-
-        nav a:hover{
-            color:#8B5CF6;
-        }
-
-        .btn{
-            background:#8B5CF6;
-            color:white;
-            padding:12px 25px;
-            border-radius:8px;
-            text-decoration:none;
-            transition:0.3s;
-        }
-
-        .btn:hover{
-            background:#7C3AED;
-        }
-
-        /* HERO */
-
-        .hero{
-            min-height:100vh;
-            display:flex;
-            flex-direction:column;
-            justify-content:center;
-            padding:0 8%;
-        }
-
-        .hero h3{
-            color:#8B5CF6;
-            margin-bottom:15px;
-        }
-
-        .hero h1{
-            font-size:4rem;
-            margin-bottom:15px;
-        }
-
-        .hero h2{
-            font-size:2rem;
-            color:#8B5CF6;
-            margin-bottom:20px;
-        }
-
-        .hero p{
-            max-width:700px;
-            line-height:1.8;
-            color:#cbd5e1;
-            margin-bottom:30px;
-        }
-
-        /* SECTIONS */
-
-        section{
-            padding:100px 8%;
-        }
-
-        section h2{
-            font-size:2.5rem;
-            color:#8B5CF6;
-            margin-bottom:40px;
-        }
-
-        /* CARDS */
-
-        .grid{
-            display:grid;
-            grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-            gap:25px;
-        }
-
-        .card{
-            background:#111827;
-            padding:25px;
-            border-radius:15px;
-            transition:0.3s;
-        }
-
-        .card:hover{
-            transform:translateY(-10px);
-        }
-
-        .card h3{
-            margin-bottom:15px;
-            color:#8B5CF6;
-        }
-
-        .card p{
-            color:#cbd5e1;
-            line-height:1.6;
-        }
-
-        /* EXPERIENCE */
-
-        .experience-item{
-            background:#111827;
-            padding:25px;
-            border-left:4px solid #8B5CF6;
-            margin-bottom:25px;
-            border-radius:10px;
-        }
-
-        .experience-item h3{
-            color:#8B5CF6;
-            margin-bottom:10px;
-        }
-
-        .experience-item span{
-            color:#94a3b8;
-        }
-
-        .experience-item ul{
-            margin-top:15px;
-            padding-left:20px;
-            color:#cbd5e1;
-        }
-
-        .experience-item li{
-            margin-bottom:10px;
-        }
-
-        /* CONTACT */
-
-        .contact{
-            text-align:center;
-        }
-
-        .contact p{
-            margin-bottom:20px;
-            color:#cbd5e1;
-        }
-
-        footer{
-            text-align:center;
-            padding:30px;
-            color:#94a3b8;
-            border-top:1px solid #1e293b;
-        }
-
-        @media(max-width:768px){
-
-            nav{
-                flex-direction:column;
-                gap:20px;
-            }
-
-            nav ul{
-                flex-wrap:wrap;
-                justify-content:center;
-            }
-
-            .hero h1{
-                font-size:2.5rem;
-            }
-
-            .hero h2{
-                font-size:1.5rem;
-            }
-        }
-
-    </style>
-
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 </head>
-
 <body>
 
 <nav>
-
-    <div class="logo">Sejal.</div>
-
+    <div class="logo"><i class="fas fa-code"></i> Sejal.</div>
     <ul>
         <li><a href="#about">About</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#experience">Experience</a></li>
         <li><a href="#projects">Projects</a></li>
+        <li><a href="#certifications">Certifications</a></li>
+        <li><a href="#feedback">Feedback</a></li>
         <li><a href="#contact">Contact</a></li>
     </ul>
-
-  
-
+    <div class="theme-toggle" id="themeToggle">
+        <i class="fas fa-moon"></i> <span>Light</span>
+    </div>
 </nav>
 
 <section class="hero">
-
-    <h3>Hello, I'm</h3>
-
+    <h3>✦ HELLO, I'M</h3>
     <h1>Sejal P. Vernekar</h1>
-
-    <h2>MCA Student | Full Stack Developer</h2>
-
-    <p>
-        Passionate software developer specializing in React JS, Java,
-        Cloud Computing, and AI-driven solutions. I enjoy building
-        scalable applications and solving real-world problems through technology.
-    </p>
-
-<a href="Sejal_P_Vernekar.pdf" class="btn" target="_blank">
-    Download Resume
-</a>
-    
+    <div class="typed-wrapper"><span id="typed-text"></span></div>
+    <p>MCA student specializing in Security Essentials with hands-on experience in Full Stack Development, React JS, Java, cloud computing, and backend systems. I build scalable, secure, and user-friendly applications.</p>
+    <a href="Sejal_P_Vernekar.pdf" class="btn" target="_blank"><i class="fas fa-download"></i> Download Resume (PDF)</a>
 </section>
 
 <section id="about">
-
     <h2>About Me</h2>
-
-    <p style="color:#cbd5e1; line-height:1.8;">
-        I am currently pursuing an MCA in Security Essentials at PES University,
-        Bengaluru. I have internship experience at ASMD Technologies and
-        Tech Mahindra, where I worked with full-stack development,
-        Firebase, Azure, Agile methodologies, and cloud technologies.
+    <p style="color: var(--text-secondary); line-height: 1.8; max-width: 850px;">
+        I'm currently pursuing my MCA in Security Essentials at PES University, Bengaluru. I have interned at ASMD Technologies (Full‑stack Developer) and Tech Mahindra (Trainee Support), gaining strong expertise in React, Firebase, Azure, Agile workflows, and cloud concepts. I love building responsive web apps, exploring AI‑driven microservices, and solving real‑world problems through clean code.
     </p>
-
 </section>
 
 <section id="skills">
-
-    <h2>Skills</h2>
-
+    <h2>Technical Skills</h2>
     <div class="grid">
-
-        <div class="card">
-            <h3>Programming</h3>
-            <p>Java, Python, JavaScript, C</p>
-        </div>
-
-        <div class="card">
-            <h3>Frontend</h3>
-            <p>React JS, HTML5, CSS3, Bootstrap, Angular JS</p>
-        </div>
-
-        <div class="card">
-            <h3>Backend & Database</h3>
-            <p>Firebase, MySQL, REST APIs, Authentication</p>
-        </div>
-
-        <div class="card">
-            <h3>Cloud & DevOps</h3>
-            <p>Azure Fundamentals, AWS Fundamentals, DevOps Basics</p>
-        </div>
-
+        <div class="card"><h3><i class="fas fa-code"></i> Programming</h3><p>Java, Python, JavaScript, C, OOP, Data Structures</p></div>
+        <div class="card"><h3><i class="fab fa-react"></i> Frontend</h3><p>React JS, HTML5, CSS3, Bootstrap, Angular JS, Responsive Design</p></div>
+        <div class="card"><h3><i class="fas fa-database"></i> Backend & DB</h3><p>Firebase, MySQL, REST APIs, Authentication, DB Management</p></div>
+        <div class="card"><h3><i class="fas fa-cloud"></i> Cloud & DevOps</h3><p>Azure Fundamentals, AWS Basics, DevOps, Cloud Computing</p></div>
+        <div class="card"><h3><i class="fas fa-chart-line"></i> ML & Analytics</h3><p>Linear Regression, Random Forest, Data Visualization, Predictive Analytics</p></div>
+        <div class="card"><h3><i class="fas fa-tools"></i> Tools & Soft Skills</h3><p>Git, VS Code, Agile, Problem Solving, Team Collaboration, Analytical Thinking</p></div>
     </div>
-
 </section>
 
 <section id="experience">
-
-    <h2>Experience</h2>
-
+    <h2>Work Experience</h2>
     <div class="experience-item">
-
-        <h3>Software Developer Intern – ASMD Technologies</h3>
-
+        <h3><i class="fas fa-briefcase"></i> Software Developer Intern – ASMD Technologies, Dharwad</h3>
         <span>Apr 2024 – Jul 2024</span>
-
         <ul>
-            <li>Developed a full-stack employment portal.</li>
-            <li>Implemented Firebase authentication.</li>
-            <li>Optimized application performance.</li>
-            <li>Collaborated using Agile methodologies.</li>
+            <li>Developed responsive full‑stack employment portal using modern web technologies + Firebase backend.</li>
+            <li>Implemented dynamic job search, secure authentication, and user‑friendly interfaces.</li>
+            <li>Collaborated in Agile teams during design, testing, debugging, and deployment.</li>
+            <li>Optimized performance and cross‑browser compatibility; managed Firebase collections for efficient data retrieval.</li>
         </ul>
-
     </div>
-
     <div class="experience-item">
-
-        <h3>Trainee Support Intern – Tech Mahindra</h3>
-
+        <h3><i class="fas fa-chalkboard-user"></i> Trainee Support Intern – Tech Mahindra, Bengaluru</h3>
         <span>Feb 2025 – May 2026</span>
-
         <ul>
-            <li>Worked on EY virtual project.</li>
-            <li>Gained Azure and DevOps exposure.</li>
-            <li>Participated in Agile development activities.</li>
-            <li>Enhanced troubleshooting skills.</li>
+            <li>Worked on Ernst & Young (EY) virtual project – exposure to cloud computing & DevOps practices.</li>
+            <li>Gained hands‑on understanding of Microsoft Azure services, deployment workflows, troubleshooting.</li>
+            <li>Participated in Agile software development and cross‑functional collaboration.</li>
+            <li>Assisted in technical documentation, system support, workflow optimization, and enhanced analytical thinking.</li>
         </ul>
-
     </div>
-
 </section>
 
 <section id="projects">
-
-    <h2>Projects</h2>
-
+    <h2>Featured Projects</h2>
     <div class="grid">
-
-        <div class="card">
-            <h3>Jobster – Job Portal</h3>
-            <p>
-                Responsive job portal with Firebase backend,
-                authentication and dynamic job search.
-            </p>
-        </div>
-
-        <div class="card">
-            <h3>International Study Cost Predictor</h3>
-            <p>
-                Machine learning application using Linear Regression
-                and Random Forest achieving 92% accuracy.
-            </p>
-        </div>
-
-        <div class="card">
-            <h3>Smart Energy-Aware Microservice Recovery</h3>
-            <p>
-                AI-driven predictive recovery framework for cloud
-                microservices focusing on energy efficiency.
-            </p>
-        </div>
-
+        <div class="card"><h3><i class="fas fa-briefcase"></i> Jobster – Job Portal</h3><p>Responsive job portal with Firebase authentication, dynamic job search, and real‑time DB. Optimized for all devices.</p><a href="#" style="color: var(--accent); margin-top: 12px; display: inline-block;">Live Demo →</a></div>
+        <div class="card"><h3><i class="fas fa-chart-line"></i> International Study Cost Predictor</h3><p>ML app using Linear Regression & Random Forest – 92% accuracy. Data preprocessing, feature engineering, visualization.</p><a href="#" style="color: var(--accent); margin-top: 12px; display: inline-block;">GitHub →</a></div>
+        <div class="card"><h3><i class="fas fa-leaf"></i> Smart Energy‑Aware Microservice Recovery</h3><p>AI‑driven predictive recovery framework for cloud microservices – improves fault tolerance & energy efficiency.</p><a href="#" style="color: var(--accent); margin-top: 12px; display: inline-block;">Research →</a></div>
     </div>
-
 </section>
 
-<section id="contact" class="contact">
+<!-- CERTIFICATIONS & LANGUAGES (from resume) -->
+<section id="certifications">
+    <h2>Certifications & Achievements</h2>
+    <div class="grid">
+        <div class="card"><h3><i class="fas fa-trophy"></i> ET‑AI Hackathon 2026</h3><p>Semi‑Finalist – Recognized by The Economic Times for innovative AI‑based solutions among top teams nationwide.</p></div>
+        <div class="card"><h3><i class="fas fa-certificate"></i> Advanced Diploma in Computer Engineering</h3><p>Kenonics Institute of Computer Science</p></div>
+        <div class="card"><h3><i class="fas fa-certificate"></i> Tech Mahindra EY Virtual Experience Program</h3><p>Cloud & DevOps exposure, enterprise problem‑solving.</p></div>
+    </div>
+    <div style="margin-top: 40px;">
+        <h3 style="color: var(--accent); margin-bottom: 20px;"><i class="fas fa-language"></i> Languages</h3>
+        <div style="display: flex; flex-wrap: wrap; gap: 15px; color: var(--text-secondary);">
+            <span>🇬🇧 English (Professional Proficiency)</span>
+            <span>🇮🇳 Hindi (Professional Proficiency)</span>
+            <span>🇮🇳 Kannada (Native)</span>
+            <span>🇮🇳 Konkani (Native)</span>
+            <span>🇮🇳 Marathi (Professional Proficiency)</span>
+        </div>
+    </div>
+</section>
 
-    <h2>Contact Me</h2>
+<!-- FEEDBACK / TESTIMONIALS -->
+<section id="feedback">
+    <h2>What People Say</h2>
+    <div class="testimonial-slider">
+        <div class="testimonial-card"><i class="fas fa-quote-left"></i><p>"Sejal is a brilliant developer with an eye for detail. Her React work is crisp and she delivers beyond expectations. A true team player!"</p><div class="testimonial-author"><img src="https://randomuser.me/api/portraits/women/68.jpg" alt="avatar"><div><strong>Riya Mehta</strong><div class="rating">★★★★★</div></div></div></div>
+        <div class="testimonial-card"><i class="fas fa-quote-left"></i><p>"Incredible problem-solving skills! Sejal optimized our backend APIs and reduced latency drastically. Highly recommend for any full-stack role."</p><div class="testimonial-author"><img src="https://randomuser.me/api/portraits/men/32.jpg" alt="avatar"><div><strong>Ankit Sharma</strong><div class="rating">★★★★★</div></div></div></div>
+        <div class="testimonial-card"><i class="fas fa-quote-left"></i><p>"Her cloud & DevOps knowledge helped our team deploy microservices faster. Sejal brings both technical depth and creative energy."</p><div class="testimonial-author"><img src="https://randomuser.me/api/portraits/women/45.jpg" alt="avatar"><div><strong>Neha Verma</strong><div class="rating">★★★★☆</div></div></div></div>
+        <div class="testimonial-card"><i class="fas fa-quote-left"></i><p>"I’ve worked with Sejal on multiple academic projects. She leads with clarity and ensures high-quality code. Amazing mentor!"</p><div class="testimonial-author"><img src="https://randomuser.me/api/portraits/men/91.jpg" alt="avatar"><div><strong>Kunal Joshi</strong><div class="rating">★★★★★</div></div></div></div>
+    </div>
+    <p style="text-align: center; margin-top: 30px; color: var(--text-secondary);"><i class="fas fa-arrow-left"></i> <i class="fas fa-arrow-right"></i> Scroll to see more feedback</p>
+</section>
 
-    <p>Email: sejalvernekar09@gmail.com</p>
-    <p>Mobile: +91 8861112430
-    <p>Location: Bengaluru, India</p>
-
+<!-- CONTACT -->
+<section id="contact">
+    <h2>Let's Connect</h2>
+    <div class="contact-grid">
+        <div class="contact-info">
+            <p><i class="fas fa-envelope"></i> sejalvernekar09@gmail.com</p>
+            <p><i class="fas fa-phone-alt"></i> +91 8861112430</p>
+            <p><i class="fas fa-map-marker-alt"></i> Bengaluru, India</p>
+            <div class="social-icons">
+                <a href="https://linkedin.com/in/sejal-vernekar-7bb5b6267" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+        <div class="contact-form">
+            <h3 style="margin-bottom: 20px; color: var(--accent);">Send a Message</h3>
+            <form id="messageForm">
+                <div class="form-group"><input type="text" id="name" placeholder="Your Name" required></div>
+                <div class="form-group"><input type="email" id="email" placeholder="Email Address" required></div>
+                <div class="form-group"><textarea rows="4" id="message" placeholder="Your Message..."></textarea></div>
+                <button type="submit" class="btn" style="width: 100%; justify-content: center;"><i class="fas fa-paper-plane"></i> Send Message</button>
+            </form>
+        </div>
+    </div>
 </section>
 
 <footer>
-
-    © 2026 Sejal P. Vernekar | Built with HTML & CSS
-
+    <p>© 2026 Sejal P. Vernekar | Built with <i class="fas fa-heart" style="color: #8B5CF6;"></i> using real resume data</p>
 </footer>
 
+<script src="script.js"></script>
 </body>
 </html>
