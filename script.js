@@ -1,125 +1,90 @@
-// =========================
-// Navbar Background Change
-// =========================
-
-window.addEventListener("scroll", () => {
-    const navbar = document.querySelector("nav");
-
-    if (window.scrollY > 50) {
-        navbar.style.background = "rgba(10, 15, 31, 0.98)";
-        navbar.style.boxShadow = "0 5px 20px rgba(0,0,0,0.3)";
-    } else {
-        navbar.style.background = "rgba(10, 15, 31, 0.95)";
-        navbar.style.boxShadow = "none";
-    }
-});
-
-
-// =========================
-// Active Navigation Link
-// =========================
-
-const sections = document.querySelectorAll("section");
-const navLinks = document.querySelectorAll("nav ul li a");
-
-window.addEventListener("scroll", () => {
-
-    let current = "";
-
-    sections.forEach(section => {
-
-        const sectionTop = section.offsetTop - 100;
-        const sectionHeight = section.clientHeight;
-
-        if (pageYOffset >= sectionTop) {
-            current = section.getAttribute("id");
-        }
+document.addEventListener('DOMContentLoaded', function() {
+    // Typed animation
+    new Typed('#typed-text', {
+        strings: ['MCA Student (Security Essentials)', 'Full Stack Developer', 'Cloud & AI Enthusiast', 'Hackathon Semi-Finalist'],
+        typeSpeed: 65,
+        backSpeed: 35,
+        loop: true
     });
 
-    navLinks.forEach(link => {
+    // Theme toggle
+    const themeBtn = document.getElementById('themeToggle');
+    const body = document.body;
+    const toggleIcon = themeBtn.querySelector('i');
+    const toggleSpan = themeBtn.querySelector('span');
 
-        link.classList.remove("active");
-
-        if (link.getAttribute("href") === "#" + current) {
-            link.classList.add("active");
+    function setTheme(theme) {
+        if (theme === 'light') {
+            body.classList.add('light');
+            toggleIcon.className = 'fas fa-sun';
+            toggleSpan.innerText = ' Dark';
+            localStorage.setItem('portfolio-theme', 'light');
+        } else {
+            body.classList.remove('light');
+            toggleIcon.className = 'fas fa-moon';
+            toggleSpan.innerText = ' Light';
+            localStorage.setItem('portfolio-theme', 'dark');
         }
+    }
+
+    const savedTheme = localStorage.getItem('portfolio-theme');
+    savedTheme === 'light' ? setTheme('light') : setTheme('dark');
+
+    themeBtn.addEventListener('click', () => {
+        body.classList.contains('light') ? setTheme('dark') : setTheme('light');
+    });
+
+    // Contact form toast
+    const form = document.getElementById('messageForm');
+    function showToast(message, isError = false) {
+        let toast = document.querySelector('.toast-msg');
+        if (toast) toast.remove();
+        const toastDiv = document.createElement('div');
+        toastDiv.className = 'toast-msg';
+        toastDiv.style.background = isError ? '#dc2626' : '#8B5CF6';
+        toastDiv.innerHTML = `<i class="fas ${isError ? 'fa-exclamation-circle' : 'fa-check-circle'}"></i> ${message}`;
+        document.body.appendChild(toastDiv);
+        setTimeout(() => toastDiv.remove(), 3500);
+    }
+
+    if (form) {
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const msg = document.getElementById('message').value.trim();
+            if (!name || !email || !msg) {
+                showToast('⚠️ Please fill all fields', true);
+                return;
+            }
+            if (!email.includes('@')) {
+                showToast('❌ Invalid email address', true);
+                return;
+            }
+            showToast(`✨ Thanks ${name}! I'll reply soon.`, false);
+            form.reset();
+        });
+    }
+
+    // Active nav highlight
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('nav ul li a');
+    window.addEventListener('scroll', () => {
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - 120;
+            const sectionHeight = section.clientHeight;
+            if (pageYOffset >= sectionTop && pageYOffset < sectionTop + sectionHeight) {
+                current = section.getAttribute('id');
+            }
+        });
+        navLinks.forEach(link => {
+            link.style.color = '';
+            if (link.getAttribute('href') === `#${current}`) {
+                link.style.color = 'var(--accent)';
+            } else {
+                link.style.color = 'var(--text-primary)';
+            }
+        });
     });
 });
-
-
-// =========================
-// Fade In Animation
-// =========================
-
-const observer = new IntersectionObserver(entries => {
-
-    entries.forEach(entry => {
-
-        if (entry.isIntersecting) {
-            entry.target.classList.add("show");
-        }
-    });
-
-}, {
-    threshold: 0.2
-});
-
-
-document.querySelectorAll(".card, .experience-item")
-    .forEach(el => observer.observe(el));
-
-
-// =========================
-// Typing Effect
-// =========================
-
-const roles = [
-    "Full Stack Developer",
-    "MCA Student",
-    "Cloud Enthusiast",
-    "AI Explorer"
-];
-
-let roleIndex = 0;
-let charIndex = 0;
-
-const typingElement = document.getElementById("typing");
-
-function typeRole() {
-
-    if (!typingElement) return;
-
-    if (charIndex < roles[roleIndex].length) {
-
-        typingElement.textContent += roles[roleIndex].charAt(charIndex);
-
-        charIndex++;
-
-        setTimeout(typeRole, 100);
-
-    } else {
-
-        setTimeout(eraseRole, 1500);
-    }
-}
-
-function eraseRole() {
-
-    if (charIndex > 0) {
-
-        typingElement.textContent =
-            roles[roleIndex].substring(0, charIndex - 1);
-
-        charIndex--;
-
-        setTimeout(eraseRole, 50);
-
-    } else {
-
-        roleIndex = (roleIndex + 1) % roles.length;
-
-        setTimeout(typeRole, 300);
-    }
-}
-
-document.addEventListener("DOMContentLoaded", typeRole);
