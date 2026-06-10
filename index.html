@@ -1,33 +1,244 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sejal Vernekar | Portfolio</title>
 
-    <title>Sejal Vernekar Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="style.css">
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:'Poppins',sans-serif;
+        }
+
+        html{
+            scroll-behavior:smooth;
+        }
+
+        body{
+            background:#050B1B;
+            color:white;
+        }
+
+        /* NAVBAR */
+
+        nav{
+            position:fixed;
+            top:0;
+            width:100%;
+            background:#0A0F1F;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            padding:20px 8%;
+            z-index:1000;
+        }
+
+        .logo{
+            font-size:2rem;
+            font-weight:700;
+            color:#8B5CF6;
+        }
+
+        nav ul{
+            display:flex;
+            list-style:none;
+            gap:35px;
+        }
+
+        nav a{
+            text-decoration:none;
+            color:white;
+            transition:0.3s;
+        }
+
+        nav a:hover{
+            color:#8B5CF6;
+        }
+
+        .btn{
+            background:#8B5CF6;
+            color:white;
+            padding:12px 25px;
+            border-radius:8px;
+            text-decoration:none;
+            transition:0.3s;
+        }
+
+        .btn:hover{
+            background:#7C3AED;
+        }
+
+        /* HERO */
+
+        .hero{
+            min-height:100vh;
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
+            padding:0 8%;
+        }
+
+        .hero h3{
+            color:#8B5CF6;
+            margin-bottom:15px;
+        }
+
+        .hero h1{
+            font-size:4rem;
+            margin-bottom:15px;
+        }
+
+        .hero h2{
+            font-size:2rem;
+            color:#8B5CF6;
+            margin-bottom:20px;
+        }
+
+        .hero p{
+            max-width:700px;
+            line-height:1.8;
+            color:#cbd5e1;
+            margin-bottom:30px;
+        }
+
+        /* SECTIONS */
+
+        section{
+            padding:100px 8%;
+        }
+
+        section h2{
+            font-size:2.5rem;
+            color:#8B5CF6;
+            margin-bottom:40px;
+        }
+
+        /* CARDS */
+
+        .grid{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+            gap:25px;
+        }
+
+        .card{
+            background:#111827;
+            padding:25px;
+            border-radius:15px;
+            transition:0.3s;
+        }
+
+        .card:hover{
+            transform:translateY(-10px);
+        }
+
+        .card h3{
+            margin-bottom:15px;
+            color:#8B5CF6;
+        }
+
+        .card p{
+            color:#cbd5e1;
+            line-height:1.6;
+        }
+
+        /* EXPERIENCE */
+
+        .experience-item{
+            background:#111827;
+            padding:25px;
+            border-left:4px solid #8B5CF6;
+            margin-bottom:25px;
+            border-radius:10px;
+        }
+
+        .experience-item h3{
+            color:#8B5CF6;
+            margin-bottom:10px;
+        }
+
+        .experience-item span{
+            color:#94a3b8;
+        }
+
+        .experience-item ul{
+            margin-top:15px;
+            padding-left:20px;
+            color:#cbd5e1;
+        }
+
+        .experience-item li{
+            margin-bottom:10px;
+        }
+
+        /* CONTACT */
+
+        .contact{
+            text-align:center;
+        }
+
+        .contact p{
+            margin-bottom:20px;
+            color:#cbd5e1;
+        }
+
+        footer{
+            text-align:center;
+            padding:30px;
+            color:#94a3b8;
+            border-top:1px solid #1e293b;
+        }
+
+        @media(max-width:768px){
+
+            nav{
+                flex-direction:column;
+                gap:20px;
+            }
+
+            nav ul{
+                flex-wrap:wrap;
+                justify-content:center;
+            }
+
+            .hero h1{
+                font-size:2.5rem;
+            }
+
+            .hero h2{
+                font-size:1.5rem;
+            }
+        }
+
+    </style>
 
 </head>
 
 <body>
-    <nav>
 
-    <h2>Sejal.</h2>
+<nav>
+
+    <div class="logo">Sejal.</div>
 
     <ul>
-
         <li><a href="#about">About</a></li>
-
         <li><a href="#skills">Skills</a></li>
-
+        <li><a href="#experience">Experience</a></li>
         <li><a href="#projects">Projects</a></li>
-
         <li><a href="#contact">Contact</a></li>
-
     </ul>
 
+    <a href="resume.pdf" class="btn">Resume</a>
+
 </nav>
-<section>
+
+<section class="hero">
 
     <h3>Hello, I'm</h3>
 
@@ -36,25 +247,149 @@
     <h2>MCA Student | Full Stack Developer</h2>
 
     <p>
-
-        Passionate software developer specializing in
-        React JS, Java, Cloud Computing and AI.
-
+        Passionate software developer specializing in React JS, Java,
+        Cloud Computing, and AI-driven solutions. I enjoy building
+        scalable applications and solving real-world problems through technology.
     </p>
 
-    <a href="resume.pdf">
-
+    <a href="resume.pdf" class="btn">
         Download Resume
-
     </a>
 
 </section>
-    <h1>Sejal P. Vernekar</h1>
 
-    <p>MCA Student | Full Stack Developer</p>
+<section id="about">
 
-    <script src="script.js"></script>
+    <h2>About Me</h2>
+
+    <p style="color:#cbd5e1; line-height:1.8;">
+        I am currently pursuing an MCA in Security Essentials at PES University,
+        Bengaluru. I have internship experience at ASMD Technologies and
+        Tech Mahindra, where I worked with full-stack development,
+        Firebase, Azure, Agile methodologies, and cloud technologies.
+    </p>
+
+</section>
+
+<section id="skills">
+
+    <h2>Skills</h2>
+
+    <div class="grid">
+
+        <div class="card">
+            <h3>Programming</h3>
+            <p>Java, Python, JavaScript, C</p>
+        </div>
+
+        <div class="card">
+            <h3>Frontend</h3>
+            <p>React JS, HTML5, CSS3, Bootstrap, Angular JS</p>
+        </div>
+
+        <div class="card">
+            <h3>Backend & Database</h3>
+            <p>Firebase, MySQL, REST APIs, Authentication</p>
+        </div>
+
+        <div class="card">
+            <h3>Cloud & DevOps</h3>
+            <p>Azure Fundamentals, AWS Fundamentals, DevOps Basics</p>
+        </div>
+
+    </div>
+
+</section>
+
+<section id="experience">
+
+    <h2>Experience</h2>
+
+    <div class="experience-item">
+
+        <h3>Software Developer Intern – ASMD Technologies</h3>
+
+        <span>Apr 2024 – Jul 2024</span>
+
+        <ul>
+            <li>Developed a full-stack employment portal.</li>
+            <li>Implemented Firebase authentication.</li>
+            <li>Optimized application performance.</li>
+            <li>Collaborated using Agile methodologies.</li>
+        </ul>
+
+    </div>
+
+    <div class="experience-item">
+
+        <h3>Trainee Support Intern – Tech Mahindra</h3>
+
+        <span>Feb 2025 – May 2026</span>
+
+        <ul>
+            <li>Worked on EY virtual project.</li>
+            <li>Gained Azure and DevOps exposure.</li>
+            <li>Participated in Agile development activities.</li>
+            <li>Enhanced troubleshooting skills.</li>
+        </ul>
+
+    </div>
+
+</section>
+
+<section id="projects">
+
+    <h2>Projects</h2>
+
+    <div class="grid">
+
+        <div class="card">
+            <h3>Jobster – Job Portal</h3>
+            <p>
+                Responsive job portal with Firebase backend,
+                authentication and dynamic job search.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>International Study Cost Predictor</h3>
+            <p>
+                Machine learning application using Linear Regression
+                and Random Forest achieving 92% accuracy.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Smart Energy-Aware Microservice Recovery</h3>
+            <p>
+                AI-driven predictive recovery framework for cloud
+                microservices focusing on energy efficiency.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<section id="contact" class="contact">
+
+    <h2>Contact Me</h2>
+
+    <p>Email: sejalvernekar09@gmail.com</p>
+
+    <p>Location: Bengaluru, India</p>
+
+    <a href="resume.pdf" class="btn">
+        Download Resume
+    </a>
+
+</section>
+
+<footer>
+
+    © 2026 Sejal P. Vernekar | Built with HTML & CSS
+
+</footer>
 
 </body>
-
 </html>
